@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Strength Checker</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Password Strength Checker</h1>
+    <input type="password" id="password" placeholder="Enter your password" />
+    
+    <!-- Password Strength Meter -->
+    <div id="password-strength-meter">
+      <div id="strength-bar"></div>
+    </div>
+
+    <div id="password-strength"></div>
+    <p id="password-message"></p>
+
+    <!-- Security Tips Section -->
+    <div id="security-tips">
+      <h2>Tips for a Stronger Password:</h2>
+      <ul>
+        <li>Use at least 8 characters (the longer, the better).</li>
+        <li>Include uppercase and lowercase letters.</li>
+        <li>Use numbers and special characters like !@#$%^&*.</li>
+        <li>Avoid using easily guessed words or personal information.</li>
+        <li>Consider using a password manager.</li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+/* Updated styles.css */
+
+/* Body Setup */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #010101;
+    position: relative;
+  }
+  
+  /* Main Container */
+  .container {
+    background: rgba(206, 22, 22, 0.9); /* Slight opacity to reveal 3D background */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(250, 250, 250, 0.2);
+    text-align: center;
+    width: 350px;
+    position: relative;
+    z-index: 1; /* Keep content in front of background */
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Hover effect to slightly scale up the container */
+  .container:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Password Strength Meter and Input */
+  input {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: all 0.3s ease;
+  }
+  
+  input:focus {
+    border-color: #2575fc;
+    outline: none;
+    transform: scale(1.02);
+  }
+  
+  #password-strength {
+    margin-top: 20px;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 8px;
+    color: #fff;
+  }
+  
+  #password-strength.weak {
+    background-color: #f44336;
+  }
+  
+  #password-strength.medium {
+    background-color: #ff9800;
+  }
+  
+  #password-strength.strong {
+    background-color: #4caf50;
+  }
+  
+  #password-message {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #ece6e6;
+  }
+  
+  #password-strength-meter {
+    margin-top: 10px;
+    width: 100%;
+    height: 12px;
+    background-color: #ddd;
+    border-radius: 10px;
+    transform: rotateX(10deg);
+  }
+  
+  #strength-bar {
+    height: 100%;
+    width: 0;
+    border-radius: 10px;
+    background-color: red;
+    transition: width 0.3s ease-in-out;
+  }
+  
+  #security-tips {
+    margin-top: 30px;
+    text-align: left;
+    font-size: 14px;
+  }
+  
+  #security-tips h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  #security-tips ul {
+    padding-left: 20px;
+    list-style-type: square;
+  }
+  
+  /* 3D Background Setup with Mouse Parallax */
+  body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150%;
+    height: 150%;
+    background: url('https://images.unsplash.com/photo-1593696954577-ab3d39317b97?q=80&w=1033&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center;
+    background-size: cover;
+    will-change: transform;
+    z-index: -1;
+    transition: transform 0.2s ease-out;
+  }
+  
+  body::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 500px;
+    background: url('https://images.unsplash.com/photo-1593696954577-ab3d39317b97?q=80&w=1033&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center;
+    background-size: auto;
+    opacity: 0.8;
+    border-radius: 50%;
+    animation: floatObject 5s ease-in-out infinite;
+  }
+  
+  @keyframes floatObject {
+    0% {
+      transform: translateY(0) scale(1.1);
+    }
+    50% {
+      transform: translateY(-30px) scale(1.15);
+    }
+    100% {
+      transform: translateY(0) scale(1.1);
+    }
+  }
+  
+  /* Media Query for Mobile */
+  @media (max-width: 600px) {
+    .container {
+      width: 90%;
+    }
+  }
+  .parallax {
+    position: absolute;
+    will-change: transform;
+  }
+  
